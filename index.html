@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>KD Deweloper Szczecin - domy dwulokalowe, lokale i jawne ceny</title>
+<meta name="description" content="KD Deweloper sp. z o.o. ze Szczecina. Dwa budynki jednorodzinne dwulokalowe, cztery lokale mieszkalne. Ceny, historia cen, rzuty i prospekty na stronie.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0F2E4A">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/bric-rdzen.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fig-rdzen.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-1024.webp" imagesrcset="img/hero-640.webp 640w, img/hero-1024.webp 1024w, img/hero-1600.webp 1600w, img/hero-2000.webp 2000w" imagesizes="(max-width:760px) 250vw, 100vw" fetchpriority="high">
+<style>
+@font-face{font-family:"Bricolage";src:url(fonts/bric-rdzen.woff2) format("woff2");font-weight:600 800;font-display:swap;unicode-range:U+0020-007E,U+00A0,U+00AB,U+00B7,U+00BB,U+00D3,U+00F3,U+2013-2014,U+2018-201E,U+2026}
+@font-face{font-family:"Bricolage";src:url(fonts/bric-pl.woff2) format("woff2");font-weight:600 800;font-display:swap;unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+@font-face{font-family:"Figtree";src:url(fonts/fig-rdzen.woff2) format("woff2");font-weight:400 600;font-display:swap;unicode-range:U+0020-007E,U+00A0,U+00AB,U+00B7,U+00BB,U+00D3,U+00F3,U+2013-2014,U+2018-201E,U+2026}
+@font-face{font-family:"Figtree";src:url(fonts/fig-pl.woff2) format("woff2");font-weight:400 600;font-display:swap;unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+:root{--granat:#0F2E4A;--granat2:#0B2238;--ink:#15212C;--txt:#3A4652;--szary:#EEF0F3;--linia:#D9DEE4;--miedz:#D2541E;--miedz2:#B5441392;--ok:#1F8A4C;--rez:#C98A00;--sprz:#8A949E;--w:1240px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font:400 17px/1.6 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--txt);background:#fff;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+h1,h2,h3{font-family:Bricolage,Figtree,sans-serif;color:var(--ink);line-height:1.12;font-weight:800;letter-spacing:-.015em}
+h2{font-size:clamp(30px,4vw,48px);margin-bottom:18px}
+h3{font-size:21px;font-weight:700}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 24px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:0 26px;background:var(--miedz);color:#fff;font-weight:600;font-size:17px;text-decoration:none;border-radius:4px;transition:background .2s,transform .2s}
+.btn:hover{background:#B9461A}
+.btn:active{transform:translateY(1px)}
+.btn .dach{width:16px;height:12px;flex:none}
+:focus-visible{outline:3px solid var(--miedz);outline-offset:3px}
+
+/* naglowek */
+.top{position:fixed;inset:0 0 auto;z-index:50;transition:background .25s,box-shadow .25s}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff;font:800 22px/1 Bricolage,sans-serif;letter-spacing:-.02em;white-space:nowrap}
+.logo svg{width:34px;height:34px;flex:none}
+.logo small{font:600 13px/1 Figtree,sans-serif;letter-spacing:0;opacity:.8;display:block;margin-top:3px}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a{color:#fff;text-decoration:none;font-weight:600;font-size:16px;opacity:.92}
+.nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+.nav .tel{border:1.5px solid rgba(255,255,255,.7);padding:10px 16px;border-radius:4px;opacity:1}
+.top.jest{background:#fff;box-shadow:0 1px 0 var(--linia)}
+.top.jest .logo,.top.jest .nav a{color:var(--ink)}
+.top.jest .nav .tel{border-color:var(--granat)}
+.top.jest .lg-l,.top.otw .lg-l{fill:var(--granat)}
+.burger{display:none;width:46px;height:46px;position:relative}
+.burger span{position:absolute;left:11px;right:11px;height:2px;background:#fff;transition:transform .25s,opacity .2s}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:22px}.burger span:nth-child(3){top:28px}
+.top.jest .burger span,.top.otw .burger span{background:var(--ink)}
+.top.otw .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.top.otw .burger span:nth-child(2){opacity:0}
+.top.otw .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;color:#fff;overflow:hidden;background:var(--granat)}
+.hero picture,.hero>img{position:absolute;inset:0}
+.hero img.tlo{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(11,34,56,.72) 0%,rgba(11,34,56,.45) 38%,rgba(11,34,56,0) 62%),linear-gradient(0deg,rgba(11,34,56,.35),rgba(11,34,56,0) 30%)}
+.hero .wrap{position:relative;z-index:2;width:100%;display:flex;justify-content:flex-end;align-items:center;padding-top:96px;padding-bottom:64px}
+.hero-txt{max-width:660px}
+.hero h1{color:#fff;font-size:clamp(36px,3.9vw,56px);margin-bottom:22px}
+.hero p.lead{font-size:clamp(18px,1.5vw,21px);line-height:1.55;max-width:540px;margin-bottom:32px;color:#F2F5F8}
+.hero .jawne{margin-top:28px;font-size:15px;color:#DCE4EC;display:flex;align-items:flex-start;gap:10px}
+.hero .jawne svg{width:20px;height:20px;flex:none}
+
+/* sekcje */
+section{scroll-margin-top:72px}
+.sek{padding:104px 0}
+.intro{max-width:760px;font-size:19px;margin-bottom:44px}
+.dach-linia{display:block;width:120px;height:22px;margin-bottom:26px;color:var(--miedz)}
+
+/* inwestycja */
+.inw{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:56px;align-items:start}
+.karuzela{position:relative}
+.tor{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab;border-radius:4px}
+.tor::-webkit-scrollbar{display:none}
+.tor.ciag{cursor:grabbing;scroll-snap-type:none}
+.tor .fot{flex:0 0 100%;scroll-snap-align:start;aspect-ratio:3/2;overflow:hidden;border-radius:4px;background:var(--szary)}
+.tor .fot img{width:100%;height:100%;object-fit:cover;pointer-events:none;user-select:none;-webkit-user-drag:none}
+.strz{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.94);display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.15);opacity:0;transition:opacity .2s}
+.karuzela:hover .strz,.strz:focus-visible{opacity:1}
+.strz.l{left:14px}.strz.p{right:14px}
+.strz svg{width:18px;height:18px;stroke:var(--ink);fill:none;stroke-width:2.2}
+.licz{position:absolute;right:14px;bottom:14px;background:rgba(11,34,56,.8);color:#fff;font-size:14px;font-weight:600;padding:5px 11px;border-radius:3px}
+.podpis{font-size:14px;color:#6B7682;margin-top:12px}
+.fakty{list-style:none;border-top:1px solid var(--linia);margin-bottom:28px}
+.fakty li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--linia)}
+.fakty b{color:var(--ink);font-weight:600;text-align:right}
+.domy{margin:6px 0 26px}
+.domy p{font-size:15px;margin-bottom:12px}
+.domy svg{width:100%;height:auto;max-width:440px;display:block}
+.domy .pol{cursor:pointer;transition:fill .2s}
+.domy .pol:hover,.domy .pol:focus-visible{fill:#FBE3D8;outline:none}
+.domy .pol.sprz{fill:#E3E7EB}
+.domy .pol.rez{fill:#FFF3D6}
+.docs{display:flex;flex-wrap:wrap;gap:12px}
+.doc{display:inline-flex;align-items:center;gap:12px;padding:12px 16px;border:1.5px solid var(--granat);border-radius:4px;text-decoration:none;color:var(--granat);font-weight:600;font-size:15px}
+.doc i{font-style:normal;background:var(--granat);color:#fff;font-size:12px;font-weight:700;padding:3px 6px;border-radius:2px}
+.doc:hover{background:var(--granat);color:#fff}
+.doc:hover i{background:#fff;color:var(--granat)}
+
+/* lokale */
+.lok{background:var(--szary)}
+.pasek{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;margin-bottom:22px}
+.przel{display:inline-flex;background:#fff;border:1px solid var(--linia);border-radius:4px;padding:4px}
+.przel button{padding:9px 16px;border-radius:3px;font-weight:600;font-size:15px;color:var(--txt)}
+.przel button[aria-pressed="true"]{background:var(--granat);color:#fff}
+.tab-wrap{background:#fff;border-radius:4px;border:1px solid var(--linia);overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:16px}
+th{font-weight:600;font-size:14px;color:#6B7682;text-align:left;padding:16px 14px;border-bottom:1px solid var(--linia);white-space:nowrap}
+td{padding:16px 14px;border-bottom:1px solid var(--linia);color:var(--ink);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+tr.blysk td{animation:blysk 1.6s}
+@keyframes blysk{0%,40%{background:#FBE3D8}100%{background:transparent}}
+td.cena b{font-family:Bricolage,sans-serif;font-size:19px;font-weight:700}
+td.cena small{display:block;color:#6B7682;font-size:13px}
+.st{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:15px}
+.st:before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.st.dost{color:var(--ok)}.st.rez{color:var(--rez)}.st.sprz{color:var(--sprz)}
+.akcje{display:flex;gap:8px;justify-content:flex-end}
+.akcje button,.akcje a{font-size:14px;font-weight:600;padding:8px 12px;border:1px solid var(--linia);border-radius:3px;text-decoration:none;color:var(--granat);background:#fff}
+.akcje button:hover,.akcje a:hover{border-color:var(--granat)}
+.akcje a.zap{background:var(--miedz);border-color:var(--miedz);color:#fff}
+.kafle{display:none;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.kafle.on{display:grid}
+.tab-wrap.off{display:none}
+.kafel{background:#fff;border:1px solid var(--linia);border-radius:4px;padding:22px 20px;display:flex;flex-direction:column;gap:12px}
+.kafel .gora{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.kafel h3{font-size:24px}
+.kafel .mini{width:64px;height:38px;flex:none}
+.kafel dl{display:grid;grid-template-columns:1fr auto;gap:6px 12px;font-size:15px}
+.kafel dd{color:var(--ink);font-weight:600;text-align:right}
+.kafel .cena{font-family:Bricolage,sans-serif;font-size:26px;font-weight:700;color:var(--ink);line-height:1.1}
+.kafel .cena small{display:block;font:400 14px Figtree,sans-serif;color:#6B7682;margin-top:4px}
+.kafel .akcje{justify-content:flex-start;flex-wrap:wrap;margin-top:auto}
+.uwaga{font-size:14px;color:#6B7682;margin-top:16px}
+
+/* jawnosc */
+.jaw{background:var(--granat);color:#D5DEE7}
+.jaw h2,.jaw h3{color:#fff}
+.jaw .intro{color:#D5DEE7}
+.dwie{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.lista{list-style:none;margin-top:18px}
+.lista li{position:relative;padding:14px 0 14px 34px;border-top:1px solid rgba(255,255,255,.14);font-size:17px}
+.lista li:before{content:"";position:absolute;left:0;top:18px;width:18px;height:18px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Cpath d='M16 3.6 2 14.4V31h14z' fill='%23fff'/%3E%3Cpath d='M18 3.6 32 14.4V31H18z' fill='%23E8662F'/%3E%3C/svg%3E")}
+.lista b{color:#fff;font-weight:600}
+.jaw a{color:#fff}
+
+/* firma + kontakt */
+.kont{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:64px;align-items:start}
+.dane{list-style:none;margin:22px 0 30px;border-top:1px solid var(--linia)}
+.dane li{padding:13px 0;border-bottom:1px solid var(--linia);display:flex;justify-content:space-between;gap:16px}
+.dane b{color:var(--ink);font-weight:600;text-align:right}
+.osoba{display:flex;flex-direction:column;gap:6px;font-size:18px}
+.osoba a{font-weight:600;color:var(--granat);text-decoration:none}
+.osoba a.duzy{font:700 30px/1.2 Bricolage,sans-serif;color:var(--ink)}
+form{background:var(--szary);padding:34px;border-radius:4px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form h3{grid-column:1/-1;font-size:24px;margin-bottom:4px}
+label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:var(--ink)}
+label.cala,.zgoda,form .btn,.ok-msg{grid-column:1/-1}
+input,select,textarea{font:inherit;font-size:16px;padding:13px 14px;border:1px solid #C9D0D7;border-radius:4px;background:#fff;color:var(--ink);width:100%}
+textarea{min-height:110px;resize:vertical}
+.zgoda{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400;font-size:14px;color:var(--txt)}
+.zgoda input{width:20px;height:20px;flex:none;margin-top:2px}
+form .btn{justify-self:start}
+.ok-msg{display:none;font-weight:600;color:var(--ok)}
+
+/* stopka */
+footer{background:var(--granat2);color:#B9C6D3;padding:56px 0 28px;font-size:15px}
+.st-g{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.12)}
+footer .logo{color:#fff;margin-bottom:16px}
+footer h4{color:#fff;font:700 16px Bricolage,sans-serif;margin-bottom:12px}
+footer ul{list-style:none;display:grid;gap:6px}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+.st-d{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:22px;font-size:14px}
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
+
+/* okna */
+.okno{position:fixed;inset:0;z-index:80;background:rgba(8,20,32,.78);display:none;align-items:center;justify-content:center;padding:20px}
+.okno.on{display:flex}
+.okno .pud{background:#fff;border-radius:6px;max-width:560px;width:100%;padding:30px;position:relative;max-height:90vh;overflow:auto}
+.okno .zamk{position:absolute;right:10px;top:10px;width:44px;height:44px;font-size:28px;line-height:1;color:var(--ink)}
+.okno h3{margin-bottom:6px;padding-right:40px}
+.okno .hist{width:100%;margin-top:16px}
+.okno .hist td,.okno .hist th{padding:11px 8px}
+.okno .rzut svg{width:100%;height:auto;margin-top:14px}
+.lb{background:rgba(8,20,32,.94)}
+.lb img{max-width:min(1200px,94vw);max-height:84vh;width:auto;height:auto;border-radius:3px}
+.lb .zamk{position:absolute;right:14px;top:14px;color:#fff;width:48px;height:48px;font-size:34px}
+.lb .strz{opacity:1;position:fixed}
+.lb .lbl{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#DCE4EC;font-size:14px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:13px 18px;border-radius:4px;font-size:15px;opacity:0;pointer-events:none;transition:.25s;z-index:90;max-width:calc(100% - 32px)}
+.toast.on{opacity:1;transform:translateX(-50%)}
+
+@media (max-width:1100px){
+ .kafle{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .inw{grid-template-columns:1fr;gap:40px}
+}
+@media (max-width:900px){
+ .nav{position:fixed;inset:72px 0 auto;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 24px;box-shadow:0 12px 24px rgba(0,0,0,.12);display:none}
+ .top.otw .nav{display:flex}
+ .top.otw{background:#fff}
+ .top.otw .logo{color:var(--ink)}
+ .nav a{color:var(--ink);padding:15px 0;border-bottom:1px solid var(--linia);font-size:18px}
+ .nav .tel{margin-top:16px;text-align:center;border-color:var(--granat)}
+ .burger{display:block}
+ .dwie,.kont{grid-template-columns:1fr;gap:44px}
+ .st-g{grid-template-columns:1fr 1fr}
+ .st-g>div:first-child{grid-column:1/-1}
+}
+@media (max-width:760px){
+ body{font-size:16px}
+ .wrap{padding:0 18px}
+ .sek{padding:72px 0}
+ .top .wrap{height:64px}
+ .nav{inset:64px 0 auto}
+ section{scroll-margin-top:64px}
+ .logo{font-size:20px}.logo svg{width:30px;height:30px}
+ .hero{min-height:0}
+ .hero img.tlo{object-position:72% 50%}
+ .hero:after{background:linear-gradient(180deg,rgba(11,34,56,.88) 0%,rgba(11,34,56,.74) 55%,rgba(11,34,56,.3) 84%,rgba(11,34,56,.12) 100%)}
+ .hero .wrap{justify-content:flex-start;align-items:flex-start;padding-top:100px;padding-bottom:0;min-height:100svh;min-height:max(100svh,600px);flex-direction:column}
+ .hero .wrap>.hero-txt{padding-bottom:40px}
+ .hero h1{font-size:clamp(31px,8.6vw,40px);margin-bottom:16px}
+ .hero p.lead{font-size:17px;margin-bottom:26px}
+ .hero .jawne{font-size:14px;margin-top:22px}
+ .intro{font-size:17px;margin-bottom:32px}
+ .strz{display:none}
+ .tab-wrap{display:none}
+ .kafle{display:grid;grid-template-columns:1fr}
+ .przel.widok{display:none}
+ form{grid-template-columns:1fr;padding:24px 18px}
+ .st-g{grid-template-columns:1fr 1fr;gap:28px}
+ .okno .pud{padding:24px 18px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top" id="top">
+ <div class="wrap">
+  <a class="logo" href="#" aria-label="KD Deweloper - strona główna">
+   <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M16 3.6 2 14.4V31h14z" fill="#fff" class="lg-l"/><path d="M18 3.6 32 14.4V31H18z" fill="#D2541E"/></svg>
+   <span>KD Deweloper<small>Szczecin</small></span>
+  </a>
+  <nav class="nav" id="nav" aria-label="Menu">
+   <a href="#inwestycja">Inwestycja</a>
+   <a href="#lokale">Lokale i&nbsp;ceny</a>
+   <a href="#jawnosc">Jawność cen</a>
+   <a href="#kontakt">Kontakt</a>
+   <a class="tel" href="tel:+48604058901">604 058 901</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="start">
+ <img class="tlo" src="img/hero-1024.webp" srcset="img/hero-640.webp 640w, img/hero-1024.webp 1024w, img/hero-1600.webp 1600w, img/hero-2000.webp 2000w" sizes="(max-width:760px) 250vw, 100vw" width="2000" height="1677" fetchpriority="high" alt="Nowoczesny dom jednorodzinny z ogrodem - zdjęcie poglądowe">
+ <div class="wrap">
+  <div class="hero-txt">
+   <h1>Deweloper w&nbsp;Szczecinie - domy dwulokalowe z&nbsp;jawną ceną każdego lokalu</h1>
+   <p class="lead">Budujemy dwa budynki jednorodzinne dwulokalowe, razem cztery lokale mieszkalne. Na stronie sprawdzą Państwo cenę, rzut, dostępność i&nbsp;prospekt każdego z&nbsp;nich.</p>
+   <a class="btn" href="#lokale">Zobacz lokale i&nbsp;ceny <svg class="dach" viewBox="0 0 16 12" aria-hidden="true"><path d="M1 6h13M9 1l5 5-5 5" fill="none" stroke="#fff" stroke-width="2.2"/></svg></a>
+   <p class="jawne"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M16 3.6 2 14.4V31h14z" fill="#fff"/><path d="M18 3.6 32 14.4V31H18z" fill="#D2541E"/></svg>Ceny i&nbsp;historia ich zmian zgodnie z&nbsp;ustawą deweloperską</p>
+  </div>
+ </div>
+</section>
+
+<section class="sek" id="inwestycja">
+ <div class="wrap">
+  <svg class="dach-linia" viewBox="0 0 120 22" aria-hidden="true"><path d="M2 20 60 2l58 18" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M60 3v19" stroke="currentColor" stroke-width="2.5"/></svg>
+  <h2>Inwestycja w&nbsp;budowie: dwa domy, cztery lokale</h2>
+  <p class="intro">Dwa budynki jednorodzinne, w&nbsp;każdym dwa lokale mieszkalne pod wspólnym dachem. Tu pokażemy wizualizacje, zdjęcia z&nbsp;kolejnych etapów budowy, lokalizację na mapie i&nbsp;dokumenty do pobrania.</p>
+  <div class="inw">
+   <div>
+    <div class="karuzela" data-karuzela>
+     <div class="tor" tabindex="0" aria-label="Zdjęcia inwestycji, przesuń w bok">
+      <button class="fot" type="button" data-lb="img/hero-1600.webp" data-alt="Elewacja i ogród przed domem"><img src="img/hero-1024.webp" width="1024" height="859" alt="Elewacja i ogród przed domem" loading="lazy" decoding="async" style="object-position:50% 60%"></button>
+      <button class="fot" type="button" data-lb="img/dom-wieczor-1200.webp" data-alt="Dom wieczorem, widok od ogrodu"><img src="img/dom-wieczor-640.webp" srcset="img/dom-wieczor-640.webp 640w, img/dom-wieczor-1200.webp 1200w" sizes="(max-width:1100px) 92vw, 680px" width="1200" height="800" alt="Dom wieczorem, widok od ogrodu" loading="lazy" decoding="async"></button>
+      <button class="fot" type="button" data-lb="img/salon-1200.webp" data-alt="Salon z kuchnią i wyjściem na taras"><img src="img/salon-640.webp" srcset="img/salon-640.webp 640w, img/salon-1200.webp 1200w" sizes="(max-width:1100px) 92vw, 680px" width="1200" height="816" alt="Salon z kuchnią i wyjściem na taras" loading="lazy" decoding="async"></button>
+      <button class="fot" type="button" data-lb="img/wnetrze-1200.webp" data-alt="Jasne wnętrze z dużym oknem"><img src="img/wnetrze-640.webp" srcset="img/wnetrze-640.webp 640w, img/wnetrze-1200.webp 1200w" sizes="(max-width:1100px) 92vw, 680px" width="1200" height="900" alt="Jasne wnętrze z dużym oknem" loading="lazy" decoding="async"></button>
+      <button class="fot" type="button" data-lb="img/budowa-mury-1200.webp" data-alt="Budowa: ściany z cegły na etapie stanu surowego"><img src="img/budowa-mury-640.webp" srcset="img/budowa-mury-640.webp 640w, img/budowa-mury-1200.webp 1200w" sizes="(max-width:1100px) 92vw, 680px" width="1200" height="800" alt="Budowa: ściany z cegły na etapie stanu surowego" loading="lazy" decoding="async"></button>
+      <button class="fot" type="button" data-lb="img/budowa-dom-1200.webp" data-alt="Budowa: dom w stanie surowym otwartym"><img src="img/budowa-dom-640.webp" srcset="img/budowa-dom-640.webp 640w, img/budowa-dom-1200.webp 1200w" sizes="(max-width:1100px) 92vw, 680px" width="1200" height="800" alt="Budowa: dom w stanie surowym otwartym" loading="lazy" decoding="async"></button>
+     </div>
+     <button class="strz l" type="button" aria-label="Poprzednie zdjęcie"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+     <button class="strz p" type="button" aria-label="Następne zdjęcie"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+     <span class="licz" aria-live="polite">1 / 6</span>
+    </div>
+    <p class="podpis">Zdjęcia poglądowe. Po umowie wstawimy Państwa wizualizacje i&nbsp;zdjęcia z&nbsp;budowy.</p>
+   </div>
+   <div>
+    <ul class="fakty">
+     <li><span>Budynki</span><b>2, jednorodzinne dwulokalowe</b></li>
+     <li><span>Lokale mieszkalne</span><b>4</b></li>
+     <li><span>Etap</span><b>w&nbsp;budowie</b></li>
+     <li><span>Dostępne lokale</span><b id="ile-dost">3 z&nbsp;4</b></li>
+    </ul>
+    <div class="domy">
+     <p>Kliknij lokal na schemacie, żeby zobaczyć jego cenę:</p>
+     <svg viewBox="0 0 440 150" role="group" aria-label="Schemat budynków A i B">
+      <g font-family="Figtree,sans-serif" font-size="14" font-weight="600" text-anchor="middle">
+       <path class="pol dost" data-lokal="A1" tabindex="0" role="button" aria-label="Lokal A1" d="M108 14 14 74v62h94z" fill="#fff"/>
+       <path class="pol rez" data-lokal="A2" tabindex="0" role="button" aria-label="Lokal A2" d="M108 14l94 60v62h-94z" fill="#fff"/>
+       <path d="M14 74 108 14l94 60M14 74v62h188V74M108 14v122" fill="none" stroke="#0F2E4A" stroke-width="2.5" pointer-events="none"/>
+       <text x="66" y="112" fill="#15212C" pointer-events="none">A1</text><text x="150" y="112" fill="#15212C" pointer-events="none">A2</text>
+       <path class="pol dost" data-lokal="B1" tabindex="0" role="button" aria-label="Lokal B1" d="M332 14l-94 60v62h94z" fill="#fff"/>
+       <path class="pol dost" data-lokal="B2" tabindex="0" role="button" aria-label="Lokal B2" d="M332 14l94 60v62h-94z" fill="#fff"/>
+       <path d="M238 74 332 14l94 60M238 74v62h188V74M332 14v122" fill="none" stroke="#0F2E4A" stroke-width="2.5" pointer-events="none"/>
+       <text x="290" y="112" fill="#15212C" pointer-events="none">B1</text><text x="374" y="112" fill="#15212C" pointer-events="none">B2</text>
+       <text x="108" y="149" fill="#6B7682" font-size="12" font-weight="400" pointer-events="none">Budynek A</text><text x="332" y="149" fill="#6B7682" font-size="12" font-weight="400" pointer-events="none">Budynek B</text>
+      </g>
+     </svg>
+    </div>
+    <div class="docs">
+     <a class="doc" href="#" data-toast="Tu otworzy się prospekt informacyjny dodany w panelu jako PDF."><i>PDF</i>Prospekt informacyjny</a>
+     <a class="doc" href="#" data-toast="Tu otworzy się standard deweloperski dodany w panelu jako PDF."><i>PDF</i>Standard deweloperski</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sek lok" id="lokale">
+ <div class="wrap">
+  <svg class="dach-linia" viewBox="0 0 120 22" aria-hidden="true"><path d="M2 20 60 2l58 18" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M60 3v19" stroke="currentColor" stroke-width="2.5"/></svg>
+  <h2>Lokale i&nbsp;ceny</h2>
+  <p class="intro">Przy każdym lokalu jest cena całkowita, cena za metr, rzut, prospekt i&nbsp;historia zmian ceny. Gdy zmienią Państwo cenę w&nbsp;panelu, poprzednia zapisze się w&nbsp;historii sama.</p>
+  <div class="pasek">
+   <div class="przel" role="group" aria-label="Filtr dostępności"><button type="button" data-filtr="all" aria-pressed="true">Wszystkie</button><button type="button" data-filtr="dost" aria-pressed="false">Tylko dostępne</button></div>
+   <div class="przel widok" role="group" aria-label="Sposób wyświetlania"><button type="button" data-widok="tab" aria-pressed="true">Tabela</button><button type="button" data-widok="kaf" aria-pressed="false">Kafelki</button></div>
+  </div>
+  <div class="tab-wrap">
+   <table>
+    <thead><tr><th>Lokal</th><th>Budynek</th><th>Powierzchnia</th><th>Pokoje</th><th>Ogród</th><th>Status</th><th>Cena</th><th><span class="sr">Akcje</span></th></tr></thead>
+    <tbody id="tb"></tbody>
+   </table>
+  </div>
+  <div class="kafle" id="kafle"></div>
+  <p class="uwaga">Liczby w&nbsp;tym podglądzie są przykładowe. Prawdziwe powierzchnie, ceny i&nbsp;rzuty wpiszą Państwo w&nbsp;panelu.</p>
+ </div>
+</section>
+
+<section class="sek jaw" id="jawnosc">
+ <div class="wrap">
+  <h2>Ceny jawne, tak jak wymaga ustawa</h2>
+  <p class="intro">Ustawa deweloperska wymaga, żeby cena każdego lokalu była podana na stronie razem z&nbsp;historią zmian, a&nbsp;dane trafiały na portal <a href="https://dane.gov.pl" rel="noopener">dane.gov.pl</a>. Strona robi to za Państwa.</p>
+  <div class="dwie">
+   <div>
+    <h3>Co widzi kupujący</h3>
+    <ul class="lista">
+     <li><b>Cena całkowita i&nbsp;cena za metr</b> każdego lokalu</li>
+     <li><b>Ceny części dodatkowych</b>: ogród, miejsce postojowe, komórka</li>
+     <li><b>Historia ceny</b> z&nbsp;datą każdej zmiany</li>
+     <li><b>Rzuty, wizualizacje i&nbsp;prospekt</b> przy każdym lokalu</li>
+    </ul>
+   </div>
+   <div>
+    <h3>Co zmieniają Państwo sami w&nbsp;panelu</h3>
+    <ul class="lista">
+     <li><b>Nowa inwestycja i&nbsp;nowy lokal</b>: wypełnia się formularz, strona sama dokłada kartę i&nbsp;wiersz w&nbsp;tabeli</li>
+     <li><b>Cena i&nbsp;status</b>: dostępny, rezerwacja, sprzedany</li>
+     <li><b>Zdjęcia, wizualizacje i&nbsp;rzuty</b> przeciągnięte z&nbsp;komputera</li>
+     <li><b>Prospekt i&nbsp;standard deweloperski</b> jako PDF</li>
+     <li><b>Plik z&nbsp;cenami dla dane.gov.pl</b> aktualizuje się codziennie sam</li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sek" id="kontakt">
+ <div class="wrap kont">
+  <div>
+   <svg class="dach-linia" viewBox="0 0 120 22" aria-hidden="true"><path d="M2 20 60 2l58 18" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M60 3v19" stroke="currentColor" stroke-width="2.5"/></svg>
+   <h2>Zapytaj o&nbsp;lokal</h2>
+   <p>Chętnie pokażemy budowę, prześlemy rzuty i&nbsp;odpowiemy na pytania o&nbsp;finansowanie i&nbsp;termin oddania.</p>
+   <div class="osoba" style="margin-top:26px">
+    <span>Grzegorz Dąbrowski</span>
+    <a class="duzy" href="tel:+48604058901">604 058 901</a>
+    <a href="mailto:kddeweloper@gmail.com">kddeweloper@gmail.com</a>
+   </div>
+   <ul class="dane">
+    <li><span>Firma</span><b>KD Deweloper sp. z&nbsp;o.o.</b></li>
+    <li><span>Siedziba</span><b>Szczecin</b></li>
+    <li><span>KRS</span><b>0001203267</b></li>
+    <li><span>NIP</span><b>955-259-20-32</b></li>
+   </ul>
+  </div>
+  <form id="form" novalidate>
+   <h3>Formularz zapytania</h3>
+   <label>Imię i&nbsp;nazwisko<input name="imie" autocomplete="name"></label>
+   <label>Telefon<input name="tel" type="tel" autocomplete="tel"></label>
+   <label class="cala">E-mail<input name="mail" type="email" autocomplete="email"></label>
+   <label class="cala">Lokal<select name="lokal" id="sel-lokal"><option value="">Wybierz lokal (opcjonalnie)</option></select></label>
+   <label class="cala">Wiadomość<textarea name="msg" placeholder="Np. proszę o rzut lokalu i termin oddania"></textarea></label>
+   <label class="zgoda"><input type="checkbox" name="zgoda">Zgadzam się na kontakt w&nbsp;sprawie mojego zapytania.</label>
+   <button class="btn" type="submit">Wyślij zapytanie</button>
+   <p class="ok-msg" id="ok-msg">To podgląd, formularz jeszcze nic nie wysyła. Na docelowej stronie zapytanie trafi na Państwa skrzynkę.</p>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="st-g">
+   <div>
+    <a class="logo" href="#"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M16 3.6 2 14.4V31h14z" fill="#fff"/><path d="M18 3.6 32 14.4V31H18z" fill="#D2541E"/></svg><span>KD Deweloper<small>Szczecin</small></span></a>
+    <p>KD Deweloper sp. z&nbsp;o.o., Szczecin<br>KRS 0001203267, NIP 955-259-20-32</p>
+   </div>
+   <div><h4>Strona</h4><ul><li><a href="#inwestycja">Inwestycja</a></li><li><a href="#lokale">Lokale i&nbsp;ceny</a></li><li><a href="#jawnosc">Jawność cen</a></li><li><a href="#kontakt">Kontakt</a></li></ul></div>
+   <div><h4>Kontakt</h4><ul><li><a href="tel:+48604058901">604 058 901</a></li><li><a href="mailto:kddeweloper@gmail.com">kddeweloper@gmail.com</a></li></ul></div>
+  </div>
+  <div class="st-d"><span>© 2026 KD Deweloper sp. z&nbsp;o.o. Zdjęcia poglądowe.</span><a class="wylinka-badge" href="https://wylinka.pl/?utm_source=kddeweloper&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a></div>
+ </div>
+</footer>
+
+<div class="okno" id="okno" role="dialog" aria-modal="true" aria-labelledby="okno-t"><div class="pud"><button class="zamk" type="button" aria-label="Zamknij">×</button><h3 id="okno-t"></h3><div id="okno-b"></div></div></div>
+<div class="okno lb" id="lb" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie"><button class="zamk" type="button" aria-label="Zamknij">×</button><button class="strz l" type="button" aria-label="Poprzednie"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><img alt=""><button class="strz p" type="button" aria-label="Następne"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button><p class="lbl"></p></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js" defer></script>
+</body>
+</html>
