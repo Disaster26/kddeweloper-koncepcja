@@ -53,8 +53,12 @@ function zamknij(){ok.classList.remove('on');if(last)last.focus()}
 $('.zamk',ok).addEventListener('click',zamknij);
 ok.addEventListener('click',function(e){if(e.target===ok)zamknij()});
 function rzut(l){
- var w=l.pow>100;
- return '<p>Schemat przykładowy. W panelu dodają Państwo prawdziwy rzut jako obraz lub PDF.</p><div class="rzut"><svg viewBox="0 0 400 260" font-family="Figtree,sans-serif" font-size="13" fill="#15212C"><rect x="10" y="10" width="380" height="240" fill="#F7F8FA" stroke="#0F2E4A" stroke-width="4"/><path d="M200 10v150M10 160h250M260 160v90M120 160v90M300 10v90M300 100h90" stroke="#0F2E4A" stroke-width="2.5" fill="none"/><text x="105" y="85" text-anchor="middle">Salon z aneksem</text><text x="250" y="60" text-anchor="middle">Kuchnia</text><text x="345" y="60" text-anchor="middle">Spiżarnia</text><text x="65" y="210" text-anchor="middle">Łazienka</text><text x="190" y="210" text-anchor="middle">Wiatrołap</text><text x="325" y="210" text-anchor="middle">'+(w?'Pokój':'Gabinet')+'</text><text x="345" y="140" text-anchor="middle">Schody</text></svg><p style="margin-top:8px;font-size:14px;color:#6B7682">Parter lokalu '+l.id+', '+m2(l.pow)+' całego lokalu</p></div>';
+ var w=l.pow>100,r='#E9DCC6',k='#DDE3E8',t='#F4EFE6';
+ function pok(x,y,ww,hh,f,n,m){return '<rect x="'+x+'" y="'+y+'" width="'+ww+'" height="'+hh+'" fill="'+f+'"/><text x="'+(x+ww/2)+'" y="'+(y+hh/2-2)+'" text-anchor="middle" font-weight="600">'+n+'</text><text x="'+(x+ww/2)+'" y="'+(y+hh/2+15)+'" text-anchor="middle" fill="#6B7682" font-size="12">'+m+' m²</text>'}
+ var sc='<path d="M10 10h380v240H10z" fill="none" stroke="#0F2E4A" stroke-width="6"/>';
+ var parter='<svg class="kond" data-k="p" viewBox="0 0 400 260" font-family="Figtree,sans-serif" font-size="13" fill="#15212C">'+pok(10,10,190,150,r,'Salon z aneksem',w?'34,2':'31,8')+pok(200,10,110,90,t,'Kuchnia','11,4')+pok(310,10,80,90,k,'Spiżarnia','3,1')+pok(10,160,110,90,k,'Łazienka','5,2')+pok(120,160,140,90,t,'Wiatrołap','6,8')+pok(260,160,130,90,r,w?'Pokój':'Gabinet','9,6')+pok(200,100,110,60,t,'Hol','5,3')+pok(310,100,80,60,t,'Schody','4,0')+'<path d="M200 10v150M10 160h250M260 160v90M120 160v90M310 10v150M200 100h190" stroke="#0F2E4A" stroke-width="2.5" fill="none"/>'+sc+'<path d="M40 10h80M230 10h50M10 60v60M390 180v40" stroke="#9FC3E0" stroke-width="6"/></svg>';
+ var pietro='<svg class="kond" data-k="g" hidden viewBox="0 0 400 260" font-family="Figtree,sans-serif" font-size="13" fill="#15212C">'+pok(10,10,150,120,r,'Sypialnia','14,6')+pok(160,10,150,120,r,'Pokój','11,9')+pok(310,10,80,120,k,'Garderoba','4,2')+pok(10,130,150,120,r,'Pokój','11,2')+pok(160,130,100,120,k,'Łazienka','7,4')+pok(260,130,130,120,t,'Korytarz','6,1')+'<path d="M160 10v240M10 130h380M310 10v120M260 130v120" stroke="#0F2E4A" stroke-width="2.5" fill="none"/>'+sc+'<path d="M50 10h70M200 10h70M10 170v50" stroke="#9FC3E0" stroke-width="6"/></svg>';
+ return '<p>Przykład kolorowego rzutu z metrażem każdego pomieszczenia. Prawdziwe rzuty lokali dodaje się w panelu.</p><div class="rzut-tab" role="group" aria-label="Kondygnacja"><button type="button" data-kond="p" aria-pressed="true">Parter</button><button type="button" data-kond="g" aria-pressed="false">Poddasze</button></div><div class="rzut">'+parter+pietro+'<p style="margin-top:8px;font-size:14px;color:#6B7682">Lokal '+l.id+', '+m2(l.pow)+' całego lokalu (liczby przykładowe)</p></div>';
 }
 function hist(l){
  var h='<p>Zmiany ceny lokalu '+l.id+' zapisane przez stronę automatycznie.</p><table class="hist"><thead><tr><th>Od dnia</th><th>Cena</th><th>Za m²</th></tr></thead><tbody>';
@@ -63,6 +67,7 @@ function hist(l){
 }
 var byId={};L.forEach(function(l){byId[l.id]=l});
 document.addEventListener('click',function(e){
+ var kb=e.target.closest('[data-kond]');if(kb){$$('[data-kond]').forEach(function(x){x.setAttribute('aria-pressed',x===kb)});$$('.rzut .kond').forEach(function(v){v.hidden=v.dataset.k!==kb.dataset.kond});return}
  var t=e.target.closest('[data-rzut],[data-hist],[data-toast],[data-zap]');if(!t)return;
  if(t.dataset.rzut){otworz('Rzut lokalu '+t.dataset.rzut,rzut(byId[t.dataset.rzut]))}
  else if(t.dataset.hist){otworz('Historia cen',hist(byId[t.dataset.hist]))}
@@ -82,6 +87,18 @@ function pokaz(id){
 $$('.domy .pol').forEach(function(p){
  p.addEventListener('click',function(){pokaz(p.dataset.lokal)});
  p.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pokaz(p.dataset.lokal)}});
+});
+
+/* wizualizacja */
+var wi=$('#wiz-info');
+function wybierz(id){
+ var l=byId[id];if(!l)return;
+ $$('.lw').forEach(function(g){g.classList.toggle('akt',g.dataset.lokal===id)});
+ wi.innerHTML='<div><h3>Lokal '+l.id+' <span class="st '+l.st+'" style="font-size:15px;margin-left:6px">'+ST[l.st]+'</span></h3><p class="dane-l">Budynek '+l.b+' · '+m2(l.pow)+' · '+l.pok+' pokoje · ogród '+l.ogr+' m² · <b>'+zl(l.cena)+'</b> ('+zl2(l.cena/l.pow)+' / m²)</p></div><div class="akcje">'+akcje(l)+'</div>';
+}
+$$('.lw').forEach(function(g){
+ g.addEventListener('click',function(){wybierz(g.dataset.lokal)});
+ g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();wybierz(g.dataset.lokal)}});
 });
 
 /* karuzela */
