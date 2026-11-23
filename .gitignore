@@ -2,3 +2,6 @@
 build.py
 src.html
 _iso_wizualizacja.py
+_wiz_mierzyn.py
+rzuty.json
+*.bak*
