@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>KD Deweloper - domy w zabudowie bliźniaczej w Mierzynie koło Szczecina</title>
-<meta name="description" content="Kameralna inwestycja KD Deweloper w Mierzynie: dwa budynki, cztery lokale po 86 m² na dwóch poziomach, ogródki i 2 miejsca postojowe. Jawne ceny, rzuty i prospekt.">
+<meta name="description" content="Kameralna inwestycja KD Deweloper w Mierzynie: dwa budynki, cztery lokale po 85 m² na dwóch poziomach, ogródki i 2 miejsca postojowe. Jawne ceny, rzuty i prospekt.">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#121212">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
@@ -177,6 +177,7 @@ td.cena small{display:block;color:var(--slaby);font-size:13px}
 /* galeria */
 .gal-g{margin-top:8px}
 .gal-g h3{font-size:22px;margin:0 0 16px}
+.gal-op{color:var(--txt);font-size:16px;margin:-6px 0 18px;max-width:760px}
 .gal-g+.gal-g{margin-top:44px}
 .siatka{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .siatka .kf{aspect-ratio:3/2;overflow:hidden;background:#222;position:relative;cursor:zoom-in}
@@ -453,8 +454,9 @@ footer a:hover{color:var(--zloto-j)}
    </table>
   </div>
   <div class="kafle" id="kafle"></div>
-  <p class="uwaga">Metraż i&nbsp;cena wstępne (86 m², 829 000 zł za lokal). Ostateczne ceny wpiszą Państwo w&nbsp;panelu, a&nbsp;historia zmian cen zapisze się sama.</p>
+  <p class="uwaga">Metraż i&nbsp;cena wstępne (85 m², 829 000 zł za lokal). Ostateczne ceny wpiszą Państwo w&nbsp;panelu, a&nbsp;historia zmian cen zapisze się sama.</p>
   <div class="prospekt">
+   <a class="btn obrys" href="#wnetrza">Wizualizacje wnętrz lokalu</a>
    <a class="btn" href="#" data-toast="Tu otworzy się wspólny prospekt informacyjny inwestycji (PDF dodany w panelu)."><i>PDF</i>Prospekt informacyjny</a>
   </div>
  </div>
@@ -473,22 +475,32 @@ footer a:hover{color:var(--zloto-j)}
     <button class="kf" type="button" data-lb="img/ext3-1200.webp" data-alt="Wizualizacja: elewacja frontowa"><img src="img/ext3-640.webp" srcset="img/ext3-640.webp 640w, img/ext3-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="427" alt="Elewacja frontowa - zdjęcie poglądowe" loading="lazy" decoding="async"></button>
    </div>
   </div>
-  <div class="gal-g">
-   <h3>Wnętrza</h3>
+  <div class="gal-g" id="wnetrza">
+   <h3>Wnętrza lokalu</h3>
+   <p class="gal-op">Wizualizacje aranżacji wnętrz: parter (salon, kuchnia, łazienka, gabinet) i&nbsp;piętro (sypialnia, pokoje, łazienka, garderoba). Kliknij zdjęcie, aby powiększyć.</p>
    <div class="siatka" data-siatka>
-    <button class="kf" type="button" data-lb="img/salon2-1200.webp" data-alt="Wnętrze: salon"><img src="img/salon2-640.webp" srcset="img/salon2-640.webp 640w, img/salon2-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="480" alt="Salon z dużymi oknami - zdjęcie poglądowe" loading="lazy" decoding="async"></button>
-    <button class="kf" type="button" data-lb="img/salon3-1200.webp" data-alt="Wnętrze: strefa dzienna z kuchnią"><img src="img/salon3-640.webp" srcset="img/salon3-640.webp 640w, img/salon3-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="435" alt="Strefa dzienna z kuchnią - zdjęcie poglądowe" loading="lazy" decoding="async"></button>
-    <button class="kf" type="button" data-lb="img/sypialnia-1200.webp" data-alt="Wnętrze: sypialnia"><img src="img/sypialnia-640.webp" srcset="img/sypialnia-640.webp 640w, img/sypialnia-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="427" alt="Sypialnia z wyjściem na taras - zdjęcie poglądowe" loading="lazy" decoding="async"></button>
+    <button class="kf" type="button" data-lb="img/wn-salon1-2000.webp" data-alt="Wizualizacja wnętrza: salon ze strefą jadalnianą"><img src="img/wn-salon1-640.webp" srcset="img/wn-salon1-640.webp 640w, img/wn-salon1-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="360" alt="Salon ze strefą jadalnianą - wizualizacja wnętrza lokalu" loading="lazy" decoding="async"></button>
+    <button class="kf" type="button" data-lb="img/wn-salon2-2000.webp" data-alt="Wizualizacja wnętrza: salon z narożnikiem"><img src="img/wn-salon2-640.webp" srcset="img/wn-salon2-640.webp 640w, img/wn-salon2-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="484" alt="Salon z narożnikiem - wizualizacja wnętrza lokalu" loading="lazy" decoding="async"></button>
+    <button class="kf" type="button" data-lb="img/wn-kuchnia1-2000.webp" data-alt="Wizualizacja wnętrza: kuchnia z wyspą"><img src="img/wn-kuchnia1-640.webp" srcset="img/wn-kuchnia1-640.webp 640w, img/wn-kuchnia1-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="360" alt="Kuchnia z wyspą - wizualizacja wnętrza lokalu" loading="lazy" decoding="async"></button>
+    <button class="kf" type="button" data-lb="img/wn-kuchnia2-2000.webp" data-alt="Wizualizacja wnętrza: kuchnia i schody na piętro"><img src="img/wn-kuchnia2-640.webp" srcset="img/wn-kuchnia2-640.webp 640w, img/wn-kuchnia2-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="360" alt="Kuchnia i schody na piętro - wizualizacja wnętrza lokalu" loading="lazy" decoding="async"></button>
+    <button class="kf" type="button" data-lb="img/wn-laz-parter-2000.webp" data-alt="Wizualizacja wnętrza: Łazienka na parterze"><img src="img/wn-laz-parter-640.webp" srcset="img/wn-laz-parter-640.webp 640w, img/wn-laz-parter-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="433" alt="Łazienka na parterze - wizualizacja wnętrza lokalu" loading="lazy" decoding="async"></button>
+    <button class="kf" type="button" data-lb="img/wn-gabinet-2000.webp" data-alt="Wizualizacja wnętrza: gabinet na parterze"><img src="img/wn-gabinet-640.webp" srcset="img/wn-gabinet-640.webp 640w, img/wn-gabinet-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="480" alt="Gabinet na parterze - wizualizacja wnętrza lokalu" loading="lazy" decoding="async"></button>
+    <button class="kf" type="button" data-lb="img/wn-sypialnia-2000.webp" data-alt="Wizualizacja wnętrza: sypialnia na piętrze"><img src="img/wn-sypialnia-640.webp" srcset="img/wn-sypialnia-640.webp 640w, img/wn-sypialnia-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="360" alt="Sypialnia na piętrze - wizualizacja wnętrza lokalu" loading="lazy" decoding="async"></button>
+    <button class="kf" type="button" data-lb="img/wn-pokoj1-2000.webp" data-alt="Wizualizacja wnętrza: pokój dziecięcy na piętrze"><img src="img/wn-pokoj1-640.webp" srcset="img/wn-pokoj1-640.webp 640w, img/wn-pokoj1-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="480" alt="Pokój dziecięcy na piętrze - wizualizacja wnętrza lokalu" loading="lazy" decoding="async"></button>
+    <button class="kf" type="button" data-lb="img/wn-pokoj4-2000.webp" data-alt="Wizualizacja wnętrza: pokój na piętrze"><img src="img/wn-pokoj4-640.webp" srcset="img/wn-pokoj4-640.webp 640w, img/wn-pokoj4-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="360" alt="Pokój na piętrze - wizualizacja wnętrza lokalu" loading="lazy" decoding="async"></button>
+    <button class="kf" type="button" data-lb="img/wn-pokoj6-2000.webp" data-alt="Wizualizacja wnętrza: pokój na piętrze z biurkiem"><img src="img/wn-pokoj6-640.webp" srcset="img/wn-pokoj6-640.webp 640w, img/wn-pokoj6-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="480" alt="Pokój na piętrze z biurkiem - wizualizacja wnętrza lokalu" loading="lazy" decoding="async"></button>
+    <button class="kf" type="button" data-lb="img/wn-laz-pietro-2000.webp" data-alt="Wizualizacja wnętrza: Łazienka na piętrze z wanną"><img src="img/wn-laz-pietro-640.webp" srcset="img/wn-laz-pietro-640.webp 640w, img/wn-laz-pietro-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="480" alt="Łazienka na piętrze z wanną - wizualizacja wnętrza lokalu" loading="lazy" decoding="async"></button>
+    <button class="kf" type="button" data-lb="img/wn-garderoba-2000.webp" data-alt="Wizualizacja wnętrza: garderoba na piętrze"><img src="img/wn-garderoba-640.webp" srcset="img/wn-garderoba-640.webp 640w, img/wn-garderoba-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1240px) 31vw, 400px" width="640" height="640" alt="Garderoba na piętrze - wizualizacja wnętrza lokalu" loading="lazy" decoding="async"></button>
    </div>
   </div>
-  <p class="uwaga">Zdjęcia poglądowe. W&nbsp;tym miejscu pojawią się wizualizacje budynków i&nbsp;wnętrz tej inwestycji.</p>
+  <p class="uwaga">Wizualizacje budynków są poglądowe i&nbsp;zostaną zastąpione wizualizacją 3D tej inwestycji.</p>
  </div>
 </section>
 
 <section class="sek ciem" id="oferta">
  <div class="wrap">
   <div class="tyt"><svg viewBox="0 0 54 34" aria-hidden="true"><path d="M2 32 27 3l25 29" fill="none" stroke="currentColor" stroke-width="3"/><path d="M27 4v30" stroke="currentColor" stroke-width="3"/></svg><h2>Oferta</h2></div>
-  <p class="intro">Każdy lokal ma 86 m² na dwóch poziomach. Cena lokalu: 829 000 zł. Wszystkie lokale są dostępne.</p>
+  <p class="intro">Każdy lokal ma 85 m² na dwóch poziomach. Cena lokalu: 829 000 zł. Wszystkie lokale są dostępne.</p>
   <ul class="kafle-o">
    <li><b>Kameralna zabudowa</b><span>2 budynki, tylko 4 lokale mieszkalne</span></li>
    <li><b>Funkcjonalny układ</b><span>Przestrzeń mieszkalna na dwóch poziomach</span></li>

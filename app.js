@@ -4,10 +4,10 @@ function grp(n,d){var p=n.toFixed(d).split('.');p[0]=p[0].replace(/\B(?=(\d{3})+
 var zl=function(n){return grp(n,0)+' zł'},zl2=function(n){return grp(n,2)+' zł'},m2=function(n){return grp(n,2)+' m²'};
 var ST={dost:'Dostępny',rez:'Rezerwacja',sprz:'Sprzedany'};
 var L=[
- {id:'A1',b:'A',pol:'l',pow:86,pok:5,mp:2,st:'dost',cena:829000,hist:[['23.11.2026',829000]]},
- {id:'A2',b:'A',pol:'p',pow:86,pok:5,mp:2,st:'dost',cena:829000,hist:[['23.11.2026',829000]]},
- {id:'B1',b:'B',pol:'l',pow:86,pok:5,mp:2,st:'dost',cena:829000,hist:[['23.11.2026',829000]]},
- {id:'B2',b:'B',pol:'p',pow:86,pok:5,mp:2,st:'dost',cena:829000,hist:[['23.11.2026',829000]]}
+ {id:'A1',b:'A',pol:'l',pow:85,pok:5,mp:2,st:'dost',cena:829000,hist:[['23.11.2026',829000]]},
+ {id:'A2',b:'A',pol:'p',pow:85,pok:5,mp:2,st:'dost',cena:829000,hist:[['23.11.2026',829000]]},
+ {id:'B1',b:'B',pol:'l',pow:85,pok:5,mp:2,st:'dost',cena:829000,hist:[['23.11.2026',829000]]},
+ {id:'B2',b:'B',pol:'p',pow:85,pok:5,mp:2,st:'dost',cena:829000,hist:[['23.11.2026',829000]]}
 ];
 function mini(l){
  var a=l.pol==='l'?'#C6A16A':'#2A2A2A',b=l.pol==='p'?'#C6A16A':'#2A2A2A';
