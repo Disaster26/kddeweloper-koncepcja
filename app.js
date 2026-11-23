@@ -23,7 +23,7 @@ L.forEach(function(l){
  kf.insertAdjacentHTML('beforeend','<article class="kafel" data-st="'+l.st+'" id="k-'+l.id+'"><div class="gora"><div><h3>Lokal '+l.id+'</h3><span class="st '+l.st+'">'+ST[l.st]+'</span></div>'+mini(l)+'</div><dl><dt>Powierzchnia</dt><dd>'+m2(l.pow)+'</dd><dt>Pokoje</dt><dd>'+l.pok+'</dd><dt>Ogród</dt><dd>'+l.ogr+' m²</dd></dl><p class="cena">'+zl(l.cena)+'<small>'+zl2(cm)+' za m²</small></p><div class="akcje">'+akcje(l)+'</div></article>');
  sel.insertAdjacentHTML('beforeend','<option value="'+l.id+'">Lokal '+l.id+' - '+ST[l.st].toLowerCase()+'</option>');
 });
-$('#ile-dost').textContent=L.filter(function(l){return l.st==='dost'}).length+' z '+L.length;
+$('#ile-dost').textContent=L.filter(function(l){return l.st==='dost'}).length;
 
 /* naglowek */
 var top=$('#top'),bur=$('#burger');
@@ -120,7 +120,7 @@ $$('[data-karuzela]').forEach(function(k){
 /* lightbox */
 var lb=$('#lb'),li=$('img',lb),lt=$('.lbl',lb),lista=[],cur=0;
 function lbShow(i){cur=(i+lista.length)%lista.length;var b=lista[cur];li.src=b.dataset.lb;li.alt=b.dataset.alt||'';lt.textContent=(b.dataset.alt||'')+'  ·  '+(cur+1)+' / '+lista.length}
-$$('[data-lb]').forEach(function(b){b.addEventListener('click',function(){lista=$$('[data-lb]',b.closest('[data-karuzela]')||document);last=b;lbShow(lista.indexOf(b));lb.classList.add('on');$('.zamk',lb).focus()})});
+$$('[data-lb]').forEach(function(b){b.addEventListener('click',function(){lista=$$('[data-lb]',b.closest('[data-siatka]')||document);last=b;lbShow(lista.indexOf(b));lb.classList.add('on');$('.zamk',lb).focus()})});
 function lbZ(){lb.classList.remove('on');li.removeAttribute('src');if(last)last.focus()}
 $('.zamk',lb).addEventListener('click',lbZ);
 $('.strz.l',lb).addEventListener('click',function(){lbShow(cur-1)});
@@ -132,6 +132,29 @@ document.addEventListener('keydown',function(e){
  if(lb.classList.contains('on')){if(e.key==='Escape')lbZ();if(e.key==='ArrowRight')lbShow(cur+1);if(e.key==='ArrowLeft')lbShow(cur-1)}
  else if(ok.classList.contains('on')&&e.key==='Escape')zamknij();
 });
+
+/* rzuty w sekcji oferty */
+(function(){var t=document.createElement('div');t.innerHTML=rzut(byId.A1);var sv=$$('svg.kond',t);
+ function wstaw(v,cel,opis){v.setAttribute('class','plan');v.hidden=false;v.setAttribute('role','img');v.setAttribute('aria-label',opis);$(cel).appendChild(v)}
+ if(sv[0])wstaw(sv[0],'#rz-p','Rzut parteru, przykład');
+ if(sv[1])wstaw(sv[1],'#rz-g','Rzut poddasza, przykład');
+})();
+
+/* aktywna pozycja menu */
+var linki=$$('#nav a[href^="#"]'),mapaL={};linki.forEach(function(a){mapaL[a.getAttribute('href').slice(1)]=a});
+if('IntersectionObserver' in window){
+ var widoczne={},sekcje=$$('main section[id]');
+ var io=new IntersectionObserver(function(en){
+  en.forEach(function(e){widoczne[e.target.id]=e.isIntersecting});
+  var akt=null;
+  sekcje.forEach(function(s){if(akt||!widoczne[s.id])return;var p=s;while(p&&!mapaL[p.id])p=p.previousElementSibling;if(p)akt=p.id});
+  linki.forEach(function(a){a.classList.toggle('akt',!!akt&&a===mapaL[akt])});
+ },{rootMargin:'-45% 0px -50% 0px'});
+ sekcje.forEach(function(s){io.observe(s)});
+ /* mapa po przewinieciu */
+ var mp=$('#mapa');
+ if(mp){var im=new IntersectionObserver(function(en){if(en[0].isIntersecting){im.disconnect();var f=document.createElement('iframe');f.src=mp.dataset.src;f.title='Mapa Google: lokalizacja inwestycji';f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';f.allowFullscreen=true;mp.appendChild(f)}},{rootMargin:'300px'});im.observe(mp)}
+}
 
 /* formularz */
 $('#form').addEventListener('submit',function(e){e.preventDefault();$('#ok-msg').style.display='block'});
