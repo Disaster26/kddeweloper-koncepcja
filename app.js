@@ -64,7 +64,7 @@ function hist(l){
 }
 var byId={};L.forEach(function(l){byId[l.id]=l});
 document.addEventListener('click',function(e){
- var kb=e.target.closest('[data-kond]');if(kb){$$('[data-kond]').forEach(function(x){x.setAttribute('aria-pressed',x===kb)});$$('.rzut .kond').forEach(function(v){v.hidden=v.dataset.k!==kb.dataset.kond});return}
+ var kb=e.target.closest('[data-kond]');if(kb){$$('[data-kond]').forEach(function(x){x.setAttribute('aria-pressed',x===kb)});$$('.rzut .kond').forEach(function(v){v.toggleAttribute('hidden',v.dataset.k!==kb.dataset.kond)});return}
  var t=e.target.closest('[data-rzut],[data-hist],[data-toast],[data-zap]');if(!t)return;
  if(t.dataset.rzut){otworz('Rzut lokalu '+t.dataset.rzut,rzut(byId[t.dataset.rzut]))}
  else if(t.dataset.hist){otworz('Historia cen',hist(byId[t.dataset.hist]))}
@@ -132,7 +132,7 @@ document.addEventListener('keydown',function(e){
 
 /* rzuty w sekcji oferty */
 (function(){var t=document.createElement('div');t.innerHTML=rzut(byId.A1);var sv=$$('svg.kond',t);
- function wstaw(v,cel,opis){v.setAttribute('class','plan');v.hidden=false;v.setAttribute('role','img');v.setAttribute('aria-label',opis);$(cel).appendChild(v)}
+ function wstaw(v,cel,opis){v.setAttribute('class','plan');v.removeAttribute('hidden');v.setAttribute('role','img');v.setAttribute('aria-label',opis);$(cel).appendChild(v)}
  if(sv[0])wstaw(sv[0],'#rz-p','Rzut parteru lokalu');
  if(sv[1])wstaw(sv[1],'#rz-g','Rzut piętra lokalu');
 })();
