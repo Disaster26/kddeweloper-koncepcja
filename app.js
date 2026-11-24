@@ -14,7 +14,7 @@ function mini(l){
  return '<svg class="mini" viewBox="0 0 64 38" aria-hidden="true"><path d="M32 2 2 20v16h30z" fill="'+a+'"/><path d="M32 2l30 18v16H32z" fill="'+b+'"/><path d="M2 20 32 2l30 18M2 20v16h60V20M32 2v34" fill="none" stroke="#E6DFD3" stroke-width="1.6"/></svg>';
 }
 function akcje(l){
- return '<button type="button" data-rzut="'+l.id+'">Rzut</button><button type="button" data-hist="'+l.id+'">Historia cen</button><a href="#" data-toast="Tu otworzy się prospekt lokalu '+l.id+' (PDF z panelu).">Prospekt</a>'+(l.st==='sprz'?'':'<a class="zap" href="#kontakt" data-zap="'+l.id+'">Zapytaj</a>');
+ return '<button type="button" data-rzut="'+l.id+'">Rzut</button><button type="button" data-hist="'+l.id+'">Historia cen</button>'+(l.st==='sprz'?'':'<a class="zap" href="#kontakt" data-zap="'+l.id+'">Zapytaj</a>');
 }
 var tb=$('#tb'),kf=$('#kafle'),sel=$('#sel-lokal');
 L.forEach(function(l){
@@ -76,7 +76,7 @@ document.addEventListener('click',function(e){
 function pokaz(id){
  var mob=matchMedia('(max-width:760px)').matches,kaf=mob||kf.classList.contains('on');
  var el=$((kaf?'#k-':'#w-')+id);if(!el)return;
- if(el.hidden){$('[data-filtr="all"]').click()}
+ if(el.hidden){el.hidden=false}
  el.scrollIntoView({behavior:'smooth',block:'center'});
  el.classList.remove('blysk');void el.offsetWidth;el.classList.add('blysk');
  if(kaf){el.animate&&el.animate([{boxShadow:'0 0 0 3px #C6A16A'},{boxShadow:'0 0 0 0 transparent'}],{duration:1800})}
